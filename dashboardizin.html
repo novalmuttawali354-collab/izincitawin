@@ -1,0 +1,292 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>IZIN KELUAR CITAWIN</title>
+  <style>
+    :root{
+      --bg:#070b14;--panel:#0e1628;--panel2:#121d33;--line:#23304a;
+      --text:#eef4ff;--muted:#8fa0bd;--accent:#18d67e;--accent2:#18a8ff;
+      --danger:#ff4d67;--warning:#ffbf3f;--shadow:0 24px 70px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:radial-gradient(circle at 20% 0%,#14213c 0,#070b14 42%,#05070d 100%);color:var(--text)}
+    button,input{font:inherit}
+    .wrap{width:min(1180px,calc(100% - 28px));margin:0 auto;padding:24px 0 50px}
+    .brand{display:flex;align-items:center;gap:12px;margin-bottom:24px}.logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;font-weight:900;color:#04110c;box-shadow:0 10px 30px rgba(24,214,126,.2)}
+    .brand h1{font-size:20px;margin:0}.brand p{margin:3px 0 0;color:var(--muted);font-size:12px}
+    .card{background:linear-gradient(180deg,rgba(19,30,52,.97),rgba(10,17,30,.97));border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+    .login{max-width:430px;margin:7vh auto 0;padding:28px}.login h2{margin:0 0 6px;font-size:26px}.sub{color:var(--muted);margin:0 0 24px;font-size:14px;line-height:1.5}
+    label{display:block;color:#b8c4d8;font-size:12px;font-weight:700;margin:15px 0 7px;letter-spacing:.4px}
+    input{width:100%;border:1px solid var(--line);background:#0a1220;color:var(--text);border-radius:12px;padding:13px 14px;outline:none}input:focus{border-color:#3979bb;box-shadow:0 0 0 3px rgba(24,168,255,.12)}
+    button{border:0;border-radius:12px;padding:13px 16px;font-weight:800;cursor:pointer;transition:.2s}button:disabled{opacity:.55;cursor:not-allowed}.btn-primary{background:linear-gradient(135deg,var(--accent),#11b76c);color:#03110a;width:100%;margin-top:18px}.btn-danger{background:linear-gradient(135deg,#ff5d73,#e93651);color:white}.btn-blue{background:linear-gradient(135deg,#1b9fff,#3875ff);color:white}.btn-ghost{background:#121c2e;border:1px solid var(--line);color:#c9d5e8}
+    .msg{display:none;margin-top:14px;padding:10px 12px;border-radius:10px;font-size:13px}.msg.show{display:block}.msg.err{background:rgba(255,77,103,.12);border:1px solid rgba(255,77,103,.35);color:#ff8c9d}.msg.ok{background:rgba(24,214,126,.1);border:1px solid rgba(24,214,126,.3);color:#8af0ba}
+    .hidden{display:none!important}.topbar{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px}.who{display:flex;align-items:center;gap:12px}.avatar{width:44px;height:44px;border-radius:14px;background:#182844;border:1px solid #2b4165;display:grid;place-items:center;font-weight:900}.who b{display:block}.who span{font-size:12px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.main-card{padding:24px}.side-card{padding:20px}.status-row{display:flex;justify-content:space-between;align-items:center;gap:15px}.pill{padding:7px 11px;border-radius:99px;font-size:11px;font-weight:900;letter-spacing:.5px}.pill.in{background:rgba(24,214,126,.12);color:#72edab;border:1px solid rgba(24,214,126,.25)}.pill.out{background:rgba(255,191,63,.12);color:#ffd278;border:1px solid rgba(255,191,63,.28)}
+    .clock{font-size:14px;color:var(--muted);margin-top:6px}.duration{font-variant-numeric:tabular-nums;font-size:clamp(48px,9vw,82px);font-weight:900;letter-spacing:-3px;margin:28px 0 8px}.duration-label{color:var(--muted);font-size:13px}.time-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}.timebox{padding:14px;background:#0b1322;border:1px solid var(--line);border-radius:14px}.timebox small{display:block;color:var(--muted);margin-bottom:6px}.timebox strong{font-size:14px;font-variant-numeric:tabular-nums}
+    .action{width:100%;font-size:17px;padding:15px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}.stat{padding:13px;background:#0b1322;border:1px solid var(--line);border-radius:14px}.stat b{font-size:22px;display:block}.stat span{font-size:11px;color:var(--muted)}
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin:4px 0 12px}.section-title h3{font-size:14px;margin:0}.section-title span{font-size:11px;color:var(--muted)}
+    .staff-list,.history-list{display:flex;flex-direction:column;gap:8px}.staff{display:flex;justify-content:space-between;align-items:center;padding:11px 12px;border-radius:12px;background:#0b1322;border:1px solid #1d2a42}.staff-name{font-size:13px;font-weight:750}.staff-role{font-size:11px;color:var(--muted);margin-top:2px}.mini{font-size:10px;padding:5px 8px;border-radius:99px;font-weight:900}.mini.in{background:rgba(24,214,126,.1);color:#72edab}.mini.out{background:rgba(255,191,63,.1);color:#ffd278}.mini-time{display:block;font-size:10px;color:var(--muted);margin-top:4px;text-align:right}
+    .history{padding:12px;border-radius:12px;border:1px solid #1d2a42;background:#0b1322}.history-top{display:flex;justify-content:space-between;gap:10px;font-size:12px}.history-meta{margin-top:7px;color:var(--muted);font-size:11px;line-height:1.6}.empty{padding:18px;text-align:center;color:var(--muted);font-size:12px;border:1px dashed #2a3852;border-radius:12px}.footer{color:#62718a;font-size:11px;text-align:center;margin-top:18px}
+    .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,30px);opacity:0;pointer-events:none;background:#121c2e;border:1px solid var(--line);padding:11px 14px;border-radius:12px;box-shadow:var(--shadow);font-size:13px;transition:.25s;z-index:50}.toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:820px){.wrap{width:min(100% - 18px,700px);padding-top:12px}.grid{grid-template-columns:1fr}.topbar{align-items:flex-start}.time-grid{grid-template-columns:1fr}.duration{font-size:54px}.login{margin-top:4vh;padding:22px}.stats{grid-template-columns:repeat(3,1fr)}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">
+    <div class="logo">C</div>
+    <div><h1>IZIN KELUAR CITAWIN</h1><p>Live staff permission system</p></div>
+  </div>
+
+  <section id="loginView" class="card login">
+    <h2>Login Staff</h2>
+    <p class="sub">Masuk menggunakan USERNAME dan PASSWORD yang terdaftar pada sheet <b>STAFF</b>.</p>
+    <form id="loginForm">
+      <label>USERNAME</label>
+      <input id="username" autocomplete="username" placeholder="Contoh: NOVAL" required />
+      <label>PASSWORD</label>
+      <input id="password" type="password" autocomplete="current-password" placeholder="Masukkan password" required />
+      <button id="loginBtn" class="btn-primary" type="submit">LOGIN</button>
+    </form>
+    <div id="loginMsg" class="msg"></div>
+  </section>
+
+  <main id="appView" class="hidden">
+    <div class="topbar">
+      <div class="who"><div class="avatar" id="avatar">N</div><div><b id="meName">-</b><span id="meRole">-</span></div></div>
+      <button id="logoutBtn" class="btn-ghost">Logout</button>
+    </div>
+
+    <div class="grid">
+      <section class="card main-card">
+        <div class="status-row">
+          <div><div style="font-size:12px;color:var(--muted)">STATUS SAYA</div><div id="liveClock" class="clock">--/--/---- --:--:--</div></div>
+          <span id="myStatus" class="pill in">MASUK</span>
+        </div>
+
+        <div id="duration" class="duration">00:00:00</div>
+        <div class="duration-label">Rentang waktu izin berjalan secara live</div>
+
+        <div class="time-grid">
+          <div class="timebox"><small>START IZIN</small><strong id="startTime">-</strong></div>
+          <div class="timebox"><small>END TIME MASUK</small><strong id="endTime">-</strong></div>
+        </div>
+
+        <button id="actionBtn" class="action btn-danger">IZIN KELUAR</button>
+      </section>
+
+      <aside class="card side-card">
+        <div class="stats">
+          <div class="stat"><b id="totalStaff">0</b><span>TOTAL STAFF</span></div>
+          <div class="stat"><b id="totalIn">0</b><span>MASUK</span></div>
+          <div class="stat"><b id="totalOut">0</b><span>IZIN</span></div>
+        </div>
+        <div class="section-title"><h3>Status Staff Live</h3><span>sync ±5 detik</span></div>
+        <div id="staffList" class="staff-list"></div>
+      </aside>
+    </div>
+
+    <section class="card side-card" style="margin-top:18px">
+      <div class="section-title"><h3>Riwayat Izin Saya</h3><span>15 data terakhir</span></div>
+      <div id="historyList" class="history-list"></div>
+    </section>
+    <div class="footer">Data tersimpan di Google Sheets • HTML berjalan dari GitHub Pages</div>
+  </main>
+</div>
+<div id="toast" class="toast"></div>
+<script>
+  // ================================================================
+  // WAJIB: GANTI DENGAN URL WEB APP APPS SCRIPT SETELAH DEPLOY
+  // Contoh: https://script.google.com/macros/s/AKfycbxxxx/exec
+  // ================================================================
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbwaQ7fBQGEQJH2R64xMPF4x0XOgxI_s-kcEdrBYslefhThYRjBuBu459T8ZPZqFPR6J/exec';
+
+  const state = {
+    token: localStorage.getItem('citawin_izin_token') || '',
+    me: null,
+    active: null,
+    serverOffset: 0,
+    history: [],
+    staffStatus: [],
+    busy: false,
+    syncTimer: null,
+    clockTimer: null
+  };
+
+  const $ = s => document.querySelector(s);
+  const loginView = $('#loginView'), appView = $('#appView');
+
+  function uid(){
+    return (crypto.randomUUID ? crypto.randomUUID() : Date.now().toString(36)+Math.random().toString(36).slice(2));
+  }
+
+  const pending = new Map();
+  window.addEventListener('message', ev => {
+    const data = ev.data;
+    if (!data || data.channel !== 'CITAWIN_IZIN' || !data.requestId) return;
+    const job = pending.get(data.requestId);
+    if (!job) return;
+    clearTimeout(job.timer);
+    pending.delete(data.requestId);
+    job.cleanup();
+    job.resolve(data);
+  });
+
+  function gasRequest(params){
+    return new Promise((resolve,reject)=>{
+      if (!GAS_URL || GAS_URL.includes('PASTE_WEB_APP_URL_HERE')) {
+        reject(new Error('GAS_URL belum diisi pada index.html.'));
+        return;
+      }
+
+      const requestId = uid();
+      const frameName = 'gas_frame_' + requestId.replace(/[^a-zA-Z0-9_-]/g,'');
+      const iframe = document.createElement('iframe');
+      iframe.name = frameName;
+      iframe.style.display = 'none';
+      document.body.appendChild(iframe);
+
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = GAS_URL;
+      form.target = frameName;
+      form.style.display = 'none';
+
+      const payload = {...params, requestId};
+      Object.entries(payload).forEach(([k,v])=>{
+        const input = document.createElement('input');
+        input.type = 'hidden'; input.name = k; input.value = v == null ? '' : String(v);
+        form.appendChild(input);
+      });
+      document.body.appendChild(form);
+
+      const cleanup = ()=>{ form.remove(); iframe.remove(); };
+      const timer = setTimeout(()=>{
+        pending.delete(requestId); cleanup(); reject(new Error('Server tidak merespons. Periksa deployment Apps Script.'));
+      }, 20000);
+      pending.set(requestId,{resolve,reject,timer,cleanup});
+      form.submit();
+    });
+  }
+
+  function setLoginMessage(text,type='err'){
+    const el=$('#loginMsg'); el.textContent=text; el.className='msg show '+type;
+  }
+  function clearLoginMessage(){ $('#loginMsg').className='msg'; }
+  function toast(text){ const el=$('#toast'); el.textContent=text; el.classList.add('show'); clearTimeout(toast.t); toast.t=setTimeout(()=>el.classList.remove('show'),2200); }
+  function hms(sec){ sec=Math.max(0,Math.floor(sec||0)); const h=Math.floor(sec/3600),m=Math.floor((sec%3600)/60),s=sec%60; return [h,m,s].map(v=>String(v).padStart(2,'0')).join(':'); }
+  function nowServer(){ return Date.now()+state.serverOffset; }
+  function formatLocal(ms){ if(!ms)return '-'; return new Intl.DateTimeFormat('id-ID',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false,timeZone:'Asia/Phnom_Penh'}).format(new Date(ms)).replace(/\./g,':'); }
+  function escapeHtml(s){ return String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
+
+  function showLogin(){
+    state.me=null; state.active=null; state.staffStatus=[]; state.history=[];
+    clearInterval(state.syncTimer); clearInterval(state.clockTimer);
+    appView.classList.add('hidden'); loginView.classList.remove('hidden');
+  }
+  function showApp(){ loginView.classList.add('hidden'); appView.classList.remove('hidden'); }
+
+  function applyData(data){
+    if (data.serverNow) state.serverOffset = Number(data.serverNow)-Date.now();
+    state.me=data.me||state.me; state.active=data.active||null; state.history=data.history||[]; state.staffStatus=data.staffStatus||[];
+    if(state.me){
+      $('#meName').textContent=state.me.name;
+      $('#meRole').textContent=(state.me.role||'-')+' • '+state.me.username;
+      $('#avatar').textContent=(state.me.name||'S').trim().charAt(0).toUpperCase();
+    }
+    renderStatus(); renderStaff(); renderHistory();
+  }
+
+  function renderStatus(){
+    const active=state.active;
+    const pill=$('#myStatus'), btn=$('#actionBtn');
+    if(active){
+      pill.textContent='SEDANG IZIN'; pill.className='pill out';
+      btn.textContent='MASUK / SELESAI IZIN'; btn.className='action btn-blue';
+      $('#startTime').textContent=active.startText||formatLocal(active.startMs);
+      $('#endTime').textContent='Belum masuk';
+    }else{
+      pill.textContent='MASUK'; pill.className='pill in';
+      btn.textContent='IZIN KELUAR'; btn.className='action btn-danger';
+      $('#startTime').textContent='-'; $('#endTime').textContent='-'; $('#duration').textContent='00:00:00';
+    }
+  }
+
+  function renderStaff(){
+    const list=state.staffStatus||[];
+    $('#totalStaff').textContent=list.length;
+    $('#totalOut').textContent=list.filter(x=>x.status==='IZIN').length;
+    $('#totalIn').textContent=list.filter(x=>x.status!=='IZIN').length;
+    $('#staffList').innerHTML=list.length?list.map(s=>`<div class="staff"><div><div class="staff-name">${escapeHtml(s.name)}</div><div class="staff-role">${escapeHtml(s.role)}</div></div><div><span class="mini ${s.status==='IZIN'?'out':'in'}">${s.status==='IZIN'?'IZIN':'MASUK'}</span>${s.status==='IZIN'?`<span class="mini-time">${escapeHtml(s.startText)}</span>`:''}</div></div>`).join(''):'<div class="empty">Belum ada data staff.</div>';
+  }
+
+  function renderHistory(){
+    const h=state.history||[];
+    $('#historyList').innerHTML=h.length?h.map(x=>`<div class="history"><div class="history-top"><b>${escapeHtml(x.duration)}</b><span class="mini ${x.status==='IZIN'?'out':'in'}">${escapeHtml(x.status)}</span></div><div class="history-meta">Start: ${escapeHtml(x.startText)}<br>End: ${escapeHtml(x.endText)}</div></div>`).join(''):'<div class="empty">Belum ada riwayat izin.</div>';
+  }
+
+  function tick(){
+    const now=nowServer();
+    $('#liveClock').textContent=formatLocal(now);
+    if(state.active && state.active.startMs){ $('#duration').textContent=hms((now-state.active.startMs)/1000); }
+    document.querySelectorAll('[data-live-start]').forEach(el=>{ const ms=Number(el.dataset.liveStart); el.textContent=hms((now-ms)/1000); });
+  }
+
+  async function sync(silent=true){
+    if(!state.token || state.busy)return;
+    try{
+      const r=await gasRequest({action:'sync',token:state.token});
+      if(!r.ok){
+        if(/sesi|login/i.test(r.message||'')){ localStorage.removeItem('citawin_izin_token'); state.token=''; showLogin(); setLoginMessage(r.message||'Sesi berakhir.'); }
+        else if(!silent) toast(r.message||'Gagal sinkron.');
+        return;
+      }
+      applyData(r);
+    }catch(e){ if(!silent) toast(e.message); }
+  }
+
+  $('#loginForm').addEventListener('submit',async e=>{
+    e.preventDefault(); clearLoginMessage();
+    const btn=$('#loginBtn'); btn.disabled=true; btn.textContent='MEMERIKSA...';
+    try{
+      const r=await gasRequest({action:'login',username:$('#username').value.trim(),password:$('#password').value});
+      if(!r.ok){ setLoginMessage(r.message||'Login gagal.'); return; }
+      state.token=r.token; localStorage.setItem('citawin_izin_token',state.token); state.serverOffset=(r.serverNow||Date.now())-Date.now();
+      $('#password').value=''; showApp();
+      await sync(false);
+      clearInterval(state.syncTimer); state.syncTimer=setInterval(()=>sync(true),5000);
+      clearInterval(state.clockTimer); state.clockTimer=setInterval(tick,1000); tick();
+    }catch(err){ setLoginMessage(err.message); }
+    finally{ btn.disabled=false; btn.textContent='LOGIN'; }
+  });
+
+  $('#actionBtn').addEventListener('click',async()=>{
+    if(state.busy)return; state.busy=true; const btn=$('#actionBtn'); btn.disabled=true;
+    try{
+      const action=state.active?'end':'start';
+      const r=await gasRequest({action,token:state.token});
+      if(!r.ok){ toast(r.message||'Proses gagal.'); return; }
+      applyData(r); toast(r.message||'Berhasil.');
+    }catch(e){ toast(e.message); }
+    finally{ state.busy=false; btn.disabled=false; }
+  });
+
+  $('#logoutBtn').addEventListener('click',async()=>{
+    const token=state.token; state.token=''; localStorage.removeItem('citawin_izin_token'); showLogin();
+    try{ if(token) await gasRequest({action:'logout',token}); }catch(_){ }
+  });
+
+  (async function boot(){
+    if(state.token){
+      showApp();
+      await sync(false);
+      if(state.token){ state.syncTimer=setInterval(()=>sync(true),5000); state.clockTimer=setInterval(tick,1000); tick(); }
+    }
+  })();
+</script>
+</body>
+</html>
