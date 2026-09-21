@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#050916">
   <title>IZIN KELUAR CITAWIN</title>
+  <link rel="preconnect" href="https://cdn.areabermain.club" crossorigin>
+  <link rel="preconnect" href="https://script.google.com">
+  <link rel="preconnect" href="https://script.googleusercontent.com">
+  <link rel="dns-prefetch" href="//cdn.areabermain.club">
   <style>
 :root{
   --bg:#050711;--bg2:#080d1a;--panel:#0b1220;--panel2:#0f1828;--panel3:#111d30;
@@ -42,6 +46,40 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
 @media(max-width:480px){.brand{gap:10px;flex:1 1 auto}.brandname{font-size:11px}.brandsub{font-size:7px}.logo{width:126px;height:42px;flex:0 0 126px}.summary{gap:8px}.stat{min-height:90px;padding:13px 14px}.statvalue{font-size:22px}.maincard{padding:14px}.ringbox{width:248px;height:248px}.unit{min-width:56px}.unit b{font-size:35px}.timeline{grid-template-columns:1fr}.progressinfo,.actionbtn,.actionhelp{grid-column:auto}.historysummary{grid-template-columns:1fr}.filters{flex-direction:column}.filterinput,.filterselect{width:100%}.loginbox{padding:23px}.loginbox h1{font-size:29px}.herohead h1{font-size:22px}.teamname{max-width:145px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
+
+/* ===== V6 FAST / LOGIN FX ===== */
+.loginbox{isolation:isolate;transform:translateZ(0);contain:layout paint style}
+.loginbox .loginfx{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:inherit;z-index:-1}
+.loginbox .loginfx:before{content:"";position:absolute;width:220px;height:220px;left:-80px;top:-90px;border-radius:50%;background:radial-gradient(circle,rgba(65,231,255,.16),transparent 68%);opacity:.75}
+.loginbox .loginfx:after{content:"";position:absolute;left:-45%;top:0;width:42%;height:100%;background:linear-gradient(90deg,transparent,rgba(105,230,255,.08),transparent);transform:skewX(-18deg) translateX(-120%);opacity:0}
+.loginbrand{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 0 18px;padding:12px 14px;border-radius:17px;background:rgba(5,13,25,.55);border:1px solid rgba(123,162,222,.14)}
+.loginbrand img{display:block;width:190px;max-width:58%;height:48px;object-fit:contain;object-position:left center;filter:drop-shadow(0 7px 16px rgba(36,225,205,.10))}
+.loginbrand .securechip{display:flex;align-items:center;gap:7px;color:#8aa1c3;font-size:8px;font-weight:900;letter-spacing:.8px;text-transform:uppercase;white-space:nowrap}
+.loginbrand .securechip i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px rgba(45,224,160,.45)}
+.loginbox.auth-loading{border-color:rgba(65,231,255,.38);box-shadow:0 20px 60px rgba(0,0,0,.30),0 0 0 1px rgba(65,231,255,.05),0 0 40px rgba(65,231,255,.06)}
+.loginbox.auth-loading .loginfx:after{opacity:1;animation:loginScan .85s linear infinite}
+.loginbox.auth-loading .loginbrand img{animation:logoBreathe .8s ease-in-out infinite alternate}
+.loginbox.auth-loading .input,.loginbox.auth-loading .authswitch{opacity:.72}
+.loginbox.auth-ok{animation:loginSuccess .34s ease both;border-color:rgba(45,224,160,.48);box-shadow:0 20px 60px rgba(0,0,0,.30),0 0 44px rgba(45,224,160,.10)}
+.loginbox.auth-error{animation:loginShake .22s linear 1}
+.loginbtn{position:relative;overflow:hidden;transform:translateZ(0)}
+.loginbtn .btntext{position:relative;z-index:2}
+.loginbtn:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 15%,rgba(255,255,255,.38) 45%,transparent 70%);transform:translateX(-130%);opacity:0}
+.loginbox.auth-loading .loginbtn:before{opacity:1;animation:btnSweep .8s linear infinite}
+.loginbox.auth-loading .loginbtn{filter:saturate(1.08);box-shadow:0 10px 28px rgba(43,220,195,.16),0 0 0 1px rgba(255,255,255,.08) inset}
+.loginbox.auth-loading .loginbtn .btntext:after{content:" •••";animation:dots 1s steps(4,end) infinite}
+@keyframes loginScan{to{transform:skewX(-18deg) translateX(390%)}}
+@keyframes logoBreathe{to{opacity:.78;transform:translateY(-1px)}}
+@keyframes btnSweep{to{transform:translateX(130%)}}
+@keyframes loginSuccess{50%{transform:scale(1.008)}100%{transform:scale(1)}}
+@keyframes loginShake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+@keyframes dots{0%{opacity:.2}100%{opacity:1}}
+#historyView.hidden{display:none!important}
+.historycard{content-visibility:auto;contain-intrinsic-size:900px}
+.teamlist{contain:content}
+@media(max-width:620px){.loginbrand img{width:155px;height:42px;max-width:62%}.loginbrand .securechip{font-size:7px}.loginbox{contain:none}}
+@media(prefers-reduced-motion:reduce){.loginbox.auth-loading .loginfx:after,.loginbox.auth-loading .loginbrand img,.loginbox.auth-loading .loginbtn:before,.loginbox.auth-ok,.loginbox.auth-error{animation:none!important}}
+
 </style>
 </head>
 <body>
@@ -57,15 +95,20 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
       <button class="navbtn" data-tab="history">RIWAYAT IZIN</button>
     </nav>
     <div id="headerUser" class="headright hidden">
-      <div class="syncbadge"><i class="syncdot"></i><span>Live Sync ringan</span></div>
+      <div class="syncbadge"><i class="syncdot"></i><span>Fast Sync</span></div>
       <div class="profilemini"><div id="avatar" class="avatar">N</div><div><div id="meName" class="pname">-</div><div id="meRole" class="prole">-</div></div></div>
       <button id="logoutBtn" class="logout">LOGOUT</button>
     </div>
   </header>
 
   <section id="loginView" class="loginwrap">
-    <div class="loginbox glass">
-      <div class="eyebrow">Secure Access • CITAWIN</div>
+    <div id="loginBox" class="loginbox glass">
+      <div class="loginfx"></div>
+      <div class="loginbrand">
+        <img src="https://cdn.areabermain.club/assets/cdn/az1/2026/01/14/20260114/2ef2245484eaf282e653a0e9771fed33/logo-new-citawin.png" alt="CITAWIN" decoding="async">
+        <div class="securechip"><i></i> SECURE ACCESS</div>
+      </div>
+      <div class="eyebrow">Staff Permission Center</div>
       <h1>Login Staff</h1>
       <p>Gunakan USERNAME dan PASSWORD yang terdaftar pada sheet <b>STAFF</b>. Password dapat diganti langsung dari menu ini.</p>
       <div class="authswitch">
@@ -76,7 +119,7 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
       <form id="loginForm">
         <div class="field"><label>USERNAME</label><input id="username" class="input" autocomplete="username" placeholder="Masukkan username" required></div>
         <div class="field"><label>PASSWORD</label><input id="password" class="input" type="password" autocomplete="current-password" placeholder="Masukkan password" required></div>
-        <button id="loginBtn" class="btn loginbtn" type="submit">LOGIN STAFF</button>
+        <button id="loginBtn" class="btn loginbtn" type="submit"><span class="btntext">LOGIN STAFF</span></button>
       </form>
 
       <form id="passwordForm" class="hidden">
@@ -86,7 +129,7 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
           <div class="field"><label>PASSWORD BARU</label><input id="cpNew" class="input" type="password" autocomplete="new-password" placeholder="Minimal 4 karakter" required></div>
           <div class="field"><label>ULANGI PASSWORD BARU</label><input id="cpConfirm" class="input" type="password" autocomplete="new-password" placeholder="Ulangi password baru" required></div>
         </div>
-        <button id="changePasswordBtn" class="btn loginbtn" type="submit">SIMPAN PASSWORD BARU</button>
+        <button id="changePasswordBtn" class="btn loginbtn" type="submit"><span class="btntext">SIMPAN PASSWORD BARU</span></button>
         <div class="authnote">Perubahan langsung memperbarui kolom <b>PASSWORD</b> pada sheet STAFF dan sesi lama akun tersebut akan dikeluarkan.</div>
       </form>
       <div id="loginMsg" class="msg"></div>
@@ -146,7 +189,7 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
         </section>
 
         <aside class="teamcard glass">
-          <div class="cardtop"><div><div class="cardtitle">Status Staff Live</div><div class="cardmeta">Sinkron lintas perangkat 1 detik • timer lokal tanpa request berat</div></div><span class="pill in"><i class="syncdot" style="display:inline-block;margin-right:6px"></i>LIVE</span></div>
+          <div class="cardtop"><div><div class="cardtitle">Status Staff Live</div><div class="cardmeta">Fast sync • timer lokal • request server minimal</div></div><span class="pill in"><i class="syncdot" style="display:inline-block;margin-right:6px"></i>LIVE</span></div>
           <div id="staffList" class="teamlist"></div>
         </aside>
       </div>
@@ -172,7 +215,7 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
           </table>
         </div>
       </section>
-      <div class="footer">Riwayat terbaru otomatis diperbarui setelah ada START / END izin dan saat full sync berkala.</div>
+      <div class="footer">Riwayat dimuat hanya saat tab dibuka agar dashboard tetap ringan.</div>
     </section>
   </main>
 </div>
@@ -183,7 +226,7 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
   // WAJIB GANTI DENGAN URL WEB APP APPS SCRIPT ANDA YANG BERAKHIR /exec
   // contoh: https://script.google.com/macros/s/AKfycbxxxxxxxxxxxx/exec
   // ================================================================
-  const GAS_URL = 'https://script.google.com/macros/s/AKfycbzdNfVOQfcUotkx62WxxiznvAh-4vr2z-3dWaV9bUsW98oNgxp59ZDU1ErhCJP18U0J/exec';
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbwEMQHFnO9kNgwaXK9pDjdzh35ve27uNlsjuBaNLeGljBXwXEKilfhWTH5CSNSGgcmR/exec';
 
   const state = {
     token: localStorage.getItem('citawin_izin_token') || '',
@@ -193,7 +236,7 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
     serverOffset: 0, history: [], staffStatus: [], todayKey: '', revision: 0,
     busy: false, pulseBusy: false, syncBusy: false,
     pulseTimer: null, tickTimer: null, fullSyncTimer: null,
-    activeTab: 'dashboard', optimistic: null
+    activeTab: 'dashboard', optimistic: null, historyLoaded:false, lastHistorySync:0
   };
 
   const $ = s => document.querySelector(s);
@@ -272,21 +315,42 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
   function clearLoginMessage(){$('#loginMsg').className='msg'}
   function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('show'),2600)}
 
+  const CACHE_KEY='citawin_izin_dashboard_cache_v6';
+  function saveDashboardCache(){
+    if(!state.me)return;
+    try{localStorage.setItem(CACHE_KEY,JSON.stringify({savedAt:Date.now(),me:state.me,active:state.active,quota:state.quota,config:state.config,serverOffset:state.serverOffset,staffStatus:state.staffStatus,todayKey:state.todayKey,revision:state.revision,lastRecord:state.lastRecord}))}catch(_){}
+  }
+  function restoreDashboardCache(){
+    try{
+      const c=JSON.parse(localStorage.getItem(CACHE_KEY)||'null');
+      if(!c||Date.now()-Number(c.savedAt||0)>12*60*60*1000)return false;
+      state.me=c.me||null;state.active=c.active||null;state.quota=c.quota||state.quota;state.config=c.config||state.config;
+      state.serverOffset=Number(c.serverOffset||0);state.staffStatus=c.staffStatus||[];state.todayKey=c.todayKey||'';state.revision=Number(c.revision||0);state.lastRecord=c.lastRecord||null;
+      applyIdentity();renderAll();return !!state.me;
+    }catch(_){return false}
+  }
+  function applyIdentity(){
+    if(state.me){$('#meName').textContent=state.me.name;$('#meRole').textContent=(state.me.role||'-')+' • '+state.me.username;$('#avatar').textContent=(state.me.name||'S').trim().charAt(0).toUpperCase()}
+    $('#todayLabel').textContent=state.todayKey?'Tanggal '+state.todayKey.split('-').reverse().join('/'):'Hari ini';
+  }
+  function setLoginFx(mode){
+    const box=$('#loginBox');if(!box)return;
+    box.classList.remove('auth-loading','auth-ok','auth-error');
+    if(mode)box.classList.add(mode);
+  }
+
   function showLogin(){
     stopTimers();state.me=null;state.active=null;state.history=[];state.staffStatus=[];
-    appView.classList.add('hidden');mainNav.classList.add('hidden');headerUser.classList.add('hidden');loginView.classList.remove('hidden');
+    appView.classList.add('hidden');mainNav.classList.add('hidden');headerUser.classList.add('hidden');loginView.classList.remove('hidden');setLoginFx('');
   }
   function showApp(){loginView.classList.add('hidden');appView.classList.remove('hidden');mainNav.classList.remove('hidden');headerUser.classList.remove('hidden')}
   function startTimers(){
     stopTimers();
     state.tickTimer=setInterval(tick,1000);
     state.pulseTimer=setInterval(()=>{if(!document.hidden)pulse()},1000);
-    state.fullSyncTimer=setInterval(()=>{
-      if(document.hidden)return;
-      if(state.activeTab==='history')sync(true);
-      else if(!state.active)sync(true);
-    },60000);
+    state.fullSyncTimer=setInterval(()=>{if(!document.hidden)sync(true)},120000);
     tick();
+    pulse();
   }
   function stopTimers(){clearInterval(state.tickTimer);clearInterval(state.pulseTimer);clearInterval(state.fullSyncTimer)}
 
@@ -295,18 +359,21 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
     $('#dashboardView').classList.toggle('hidden',tab!=='dashboard');
     $('#historyView').classList.toggle('hidden',tab!=='history');
     document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
-    if(tab==='history'){renderHistory();sync(true)}
+    if(tab==='history'){
+      renderHistory();
+      if(!state.historyLoaded || Date.now()-state.lastHistorySync>5000) loadHistory(true);
+    }
   }
   document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
 
   function applyData(d){
     if(d.serverNow)state.serverOffset=Number(d.serverNow)-Date.now();
-    state.me=d.me||state.me;state.active=d.active||null;state.lastRecord=d.lastRecord||null;
-    state.history=d.history||[];state.staffStatus=d.staffStatus||[];state.quota=d.quota||state.quota;state.config=d.config||state.config;
+    state.me=d.me||state.me;state.active=('active' in d)?(d.active||null):state.active;state.lastRecord=d.lastRecord||state.lastRecord;
+    if(Array.isArray(d.history)){state.history=d.history;state.historyLoaded=true;state.lastHistorySync=Date.now()}
+    if(Array.isArray(d.staffStatus))state.staffStatus=d.staffStatus;
+    state.quota=d.quota||state.quota;state.config=d.config||state.config;
     state.todayKey=d.todayKey||state.todayKey;state.revision=Number(d.revision||state.revision||0);
-    if(state.me){$('#meName').textContent=state.me.name;$('#meRole').textContent=(state.me.role||'-')+' • '+state.me.username;$('#avatar').textContent=(state.me.name||'S').trim().charAt(0).toUpperCase()}
-    $('#todayLabel').textContent=state.todayKey?'Tanggal '+state.todayKey.split('-').reverse().join('/'):'Hari ini';
-    renderAll();
+    applyIdentity();renderAll();saveDashboardCache();
   }
 
   function applyPulse(d){
@@ -327,7 +394,7 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
       state.quota={used,max,remaining:Math.max(0,max-used),blocked:!state.active&&used>=max};
     }
     if(oldDay!==state.todayKey){$('#todayLabel').textContent='Tanggal '+state.todayKey.split('-').reverse().join('/');toast('Pergantian hari terdeteksi. Kuota izin kembali 0 / 4.')}
-    renderSummary();renderMain();renderStaff();tick();
+    renderSummary();renderMain();renderStaff();tick();saveDashboardCache();
     return true;
   }
 
@@ -476,15 +543,26 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
       if(r.ended){state.lastRecord=r.ended;upsertHistoryRecord(r.ended)}
       mergeStaffUpdate(r.staffUpdate);
     }
-    renderAll();
+    renderAll();saveDashboardCache();
   }
 
   async function sync(silent=true){
     if(!state.token||state.syncBusy||state.busy)return;state.syncBusy=true;
     try{
-      const r=await gasRequest({action:'sync',token:state.token},15000);
+      const r=await gasRequest({action:'sync',token:state.token},9000);
       if(!r.ok){handleApiError(r.message,silent);return}applyData(r);
     }catch(e){if(!silent)toast(e.message)}finally{state.syncBusy=false}
+  }
+
+  async function loadHistory(silent=true){
+    if(!state.token||state.busy)return;
+    try{
+      const r=await gasRequest({action:'history',token:state.token},12000);
+      if(!r.ok){handleApiError(r.message,silent);return}
+      if(r.serverNow)state.serverOffset=Number(r.serverNow)-Date.now();
+      state.history=Array.isArray(r.history)?r.history:[];state.lastRecord=r.lastRecord||state.lastRecord;
+      state.historyLoaded=true;state.lastHistorySync=Date.now();renderHistory();
+    }catch(e){if(!silent)toast(e.message)}
   }
 
   async function pulse(){
@@ -493,9 +571,9 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
       const r=await pulseRequest(6500);
       if(!r||!r.ok){if(r)handleApiError(r.message,true);return}
       const changed=applyPulse(r);
-      if(changed&&state.activeTab==='history'&&!state.syncBusy){
+      if(changed&&state.activeTab==='history'&&Date.now()-state.lastHistorySync>2500){
         clearTimeout(pulse.historyRefresh);
-        pulse.historyRefresh=setTimeout(()=>sync(true),1200);
+        pulse.historyRefresh=setTimeout(()=>loadHistory(true),350);
       }
     }catch(_){/* silent: timer lokal tetap berjalan tanpa terganggu jaringan */}finally{state.pulseBusy=false}
   }
@@ -515,29 +593,32 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
     if(!isLogin&&!$('#cpUsername').value&&$('#username').value)$('#cpUsername').value=$('#username').value.trim();
   }
   document.querySelectorAll('.authmode').forEach(b=>b.addEventListener('click',()=>setAuthMode(b.dataset.authmode)));
+  $('#username').addEventListener('focus',warmServer,{once:true});
 
   $('#passwordForm').addEventListener('submit',async e=>{
     e.preventDefault();clearLoginMessage();
     const username=$('#cpUsername').value.trim(),oldPassword=$('#cpOld').value,newPassword=$('#cpNew').value,confirm=$('#cpConfirm').value;
     if(newPassword!==confirm){setLoginMessage('Konfirmasi password baru tidak sama.');return}
-    const btn=$('#changePasswordBtn');btn.disabled=true;
+    const btn=$('#changePasswordBtn');btn.disabled=true;setLoginFx('auth-loading');
     try{
       const r=await gasRequest({action:'change_password',username,oldPassword,newPassword},15000);
-      if(!r.ok){setLoginMessage(r.message||'Gagal mengganti password.');return}
+      if(!r.ok){setLoginFx('auth-error');setLoginMessage(r.message||'Gagal mengganti password.');return}
       $('#username').value=username.toUpperCase();$('#password').value='';
       $('#cpOld').value='';$('#cpNew').value='';$('#cpConfirm').value='';
-      setAuthMode('login');setLoginMessage(r.message||'Password berhasil diganti.','ok');
-    }catch(err){setLoginMessage(err.message)}finally{btn.disabled=false}
+      setLoginFx('auth-ok');setAuthMode('login');setLoginMessage(r.message||'Password berhasil diganti.','ok');
+    }catch(err){setLoginFx('auth-error');setLoginMessage(err.message)}finally{setTimeout(()=>setLoginFx(''),420);btn.disabled=false}
   });
 
   $('#loginForm').addEventListener('submit',async e=>{
-    e.preventDefault();clearLoginMessage();const btn=$('#loginBtn');btn.disabled=true;
+    e.preventDefault();clearLoginMessage();const btn=$('#loginBtn');btn.disabled=true;setLoginFx('auth-loading');
     try{
-      const r=await gasRequest({action:'login',username:$('#username').value.trim(),password:$('#password').value},15000);
-      if(!r.ok){setLoginMessage(r.message||'Login gagal.');return}
-      state.token=r.token;localStorage.setItem('citawin_izin_token',state.token);state.serverOffset=(r.serverNow||Date.now())-Date.now();$('#password').value='';showApp();
-      await sync(false);startTimers();
-    }catch(err){setLoginMessage(err.message)}finally{btn.disabled=false}
+      const r=await gasRequest({action:'login',username:$('#username').value.trim(),password:$('#password').value},10000);
+      if(!r.ok){setLoginFx('auth-error');setLoginMessage(r.message||'Login gagal.');return}
+      state.token=r.token;localStorage.setItem('citawin_izin_token',state.token);state.serverOffset=(r.serverNow||Date.now())-Date.now();$('#password').value='';
+      if(r.dashboard)applyData(r.dashboard);else if(r.staff){state.me=r.staff;applyIdentity()}
+      setLoginFx('auth-ok');
+      setTimeout(()=>{showApp();startTimers()},180);
+    }catch(err){setLoginFx('auth-error');setLoginMessage(err.message)}finally{setTimeout(()=>setLoginFx(''),520);btn.disabled=false}
   });
 
   $('#actionBtn').addEventListener('click',async()=>{
@@ -567,11 +648,25 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
     }
   });
 
-  $('#logoutBtn').addEventListener('click',async()=>{const token=state.token;state.token='';localStorage.removeItem('citawin_izin_token');showLogin();try{if(token)await gasRequest({action:'logout',token},8000)}catch(_){}});
-  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&state.token){pulse();if(state.activeTab==='history')sync(true)}});
+  $('#logoutBtn').addEventListener('click',async()=>{const token=state.token;state.token='';localStorage.removeItem('citawin_izin_token');localStorage.removeItem(CACHE_KEY);showLogin();try{if(token)await gasRequest({action:'logout',token},8000)}catch(_){}});
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&state.token){pulse();if(state.activeTab==='history'&&Date.now()-state.lastHistorySync>5000)loadHistory(true)}});
 
-  (async function boot(){
-    if(state.token){showApp();await sync(false);if(state.token)startTimers()}
+
+  function warmServer(){
+    if(!GAS_URL||GAS_URL.includes('PASTE_WEB_APP_URL_HERE')||state.token)return;
+    const cb='__citawinWarm';
+    const old=window[cb];let sc=null,t=null;
+    window[cb]=()=>{clearTimeout(t);try{sc&&sc.remove()}catch(_){};if(old)window[cb]=old;else try{delete window[cb]}catch(_){}};
+    sc=document.createElement('script');sc.async=true;
+    sc.src=GAS_URL+(GAS_URL.includes('?')?'&':'?')+new URLSearchParams({action:'warm',callback:cb,_:String(Date.now())}).toString();
+    sc.onerror=()=>{try{sc.remove()}catch(_){};if(old)window[cb]=old;else try{delete window[cb]}catch(_){}};
+    t=setTimeout(()=>{try{sc.remove()}catch(_){}},5000);document.head.appendChild(sc);
+  }
+
+  (function boot(){
+    if(state.token){
+      restoreDashboardCache();showApp();startTimers();sync(false);
+    }else{setTimeout(warmServer,250)}
   })();
 </script>
 </body>
