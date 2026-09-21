@@ -103,7 +103,7 @@
   // WAJIB: GANTI DENGAN URL WEB APP APPS SCRIPT SETELAH DEPLOY
   // Contoh: https://script.google.com/macros/s/AKfycbxxxx/exec
   // ================================================================
-  const GAS_URL = 'https://script.google.com/macros/s/AKfycbwaQ7fBQGEQJH2R64xMPF4x0XOgxI_s-kcEdrBYslefhThYRjBuBu459T8ZPZqFPR6J/exec';
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbxdv6GaQGMr_TqlLoizaG2h4Wwf1JFtUYeUcb14_fkNLRRJn4zR3KG1bAyTexcawS8l/exec';
 
   const state = {
     token: localStorage.getItem('citawin_izin_token') || '',
@@ -166,8 +166,8 @@
 
       const cleanup = ()=>{ form.remove(); iframe.remove(); };
       const timer = setTimeout(()=>{
-        pending.delete(requestId); cleanup(); reject(new Error('Server tidak merespons. Periksa deployment Apps Script.'));
-      }, 20000);
+        pending.delete(requestId); cleanup(); reject(new Error('Server Apps Script tidak merespons. Pastikan URL /exec benar, akses Web App = Anyone, lalu deploy versi terbaru.'));
+      }, 12000);
       pending.set(requestId,{resolve,reject,timer,cleanup});
       form.submit();
     });
