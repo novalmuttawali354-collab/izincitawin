@@ -80,6 +80,81 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
 @media(max-width:620px){.loginbrand img{width:155px;height:42px;max-width:62%}.loginbrand .securechip{font-size:7px}.loginbox{contain:none}}
 @media(prefers-reduced-motion:reduce){.loginbox.auth-loading .loginfx:after,.loginbox.auth-loading .loginbrand img,.loginbox.auth-loading .loginbtn:before,.loginbox.auth-ok,.loginbox.auth-error{animation:none!important}}
 
+
+/* =====================================================================
+   V7 — REFERENCE MATCH / NEON CITAWIN DASHBOARD
+   Visual-only override. Semua ID/logic V6.1 tetap dipertahankan.
+   ===================================================================== */
+:root{
+  --bg:#020719;--panel:#06152f;--panel2:#071833;--panel3:#091b3c;
+  --text:#f8fbff;--muted:#8fa6c9;--cyan:#39eeff;--blue:#268cff;
+  --violet:#795cff;--purple:#b34cff;--pink:#ff4fc4;--green:#31f1b4;
+  --amber:#ffba4f;--red:#ff5a88;
+}
+html{background:#020719}
+body{
+  font-family:"Segoe UI",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;
+  background:
+    radial-gradient(ellipse at 6% 2%,rgba(25,125,255,.34) 0,rgba(16,57,150,.16) 19%,transparent 38%),
+    radial-gradient(ellipse at 94% 8%,rgba(95,46,255,.33) 0,rgba(16,62,159,.16) 22%,transparent 39%),
+    radial-gradient(ellipse at 48% 98%,rgba(34,76,210,.20),transparent 37%),
+    linear-gradient(180deg,#02091e 0%,#02071b 58%,#020719 100%);
+  background-attachment:fixed;
+  font-weight:600;
+}
+body:before,body:after{content:"";position:fixed;pointer-events:none;z-index:0;border-radius:50%;opacity:.72}
+body:before{width:1120px;height:820px;left:-735px;top:-480px;border:2px solid rgba(0,204,255,.80);box-shadow:0 0 11px #00bfff,0 0 28px rgba(0,153,255,.55),28px 30px 0 -26px rgba(35,113,255,.50),60px 58px 0 -58px rgba(85,67,255,.42);transform:rotate(-14deg)}
+body:after{width:1200px;height:760px;right:-705px;top:-390px;border:2px solid rgba(83,82,255,.90);box-shadow:0 0 12px #5364ff,0 0 30px rgba(83,72,255,.52),-30px 38px 0 -28px rgba(0,185,255,.38),-68px 72px 0 -64px rgba(185,47,255,.35);transform:rotate(17deg)}
+.gridfx{opacity:1;background:none;mask-image:none;overflow:hidden}
+.gridfx:before,.gridfx:after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.gridfx:before{width:1180px;height:520px;left:-180px;bottom:-340px;border:2px solid rgba(0,132,255,.72);box-shadow:0 0 12px rgba(0,179,255,.76),0 -24px 0 -22px rgba(85,65,255,.5),0 -48px 0 -46px rgba(25,209,255,.35);transform:rotate(-12deg)}
+.gridfx:after{width:1140px;height:620px;right:-560px;bottom:-235px;border:2px solid rgba(34,134,255,.50);box-shadow:0 0 16px rgba(62,73,255,.65),0 -34px 0 -32px rgba(196,49,255,.32);transform:rotate(25deg)}
+.shell{width:min(1478px,calc(100% - 38px));padding:20px 0 34px;z-index:2}
+.glass{background:linear-gradient(145deg,rgba(6,24,54,.94),rgba(2,14,36,.97));border:1px solid rgba(67,174,255,.52);box-shadow:inset 0 0 0 1px rgba(85,105,255,.08),0 0 0 1px rgba(39,87,255,.06),0 15px 48px rgba(0,0,0,.36)}
+
+/* header */
+.header{min-height:80px;border-radius:22px;padding:0 18px 0 22px;border:1px solid rgba(62,194,255,.76);box-shadow:inset 0 0 18px rgba(25,129,255,.12),0 0 8px rgba(40,195,255,.52),0 0 26px rgba(85,60,255,.26),0 18px 42px rgba(0,0,0,.34);top:12px;background:linear-gradient(110deg,rgba(4,24,54,.95),rgba(3,14,38,.97) 55%,rgba(19,12,59,.94))}
+.header:before{left:16px;right:16px;height:2px;background:linear-gradient(90deg,#38f0ff 0%,#368bff 36%,#7659ff 70%,#c04cff 100%);opacity:.9;box-shadow:0 0 10px currentColor}
+.brand{gap:17px;flex:0 1 535px}.logo{width:220px;height:58px;flex-basis:220px}.logo img{filter:drop-shadow(0 4px 9px rgba(0,0,0,.45)) drop-shadow(0 0 8px rgba(37,143,255,.24))}.brandcopy{padding-left:16px;border-left:1px solid rgba(120,152,214,.42)}
+.brandname{font-size:18px;font-weight:900;letter-spacing:-.2px;text-shadow:0 1px 8px rgba(255,255,255,.08)}.brandsub{font-size:12px;color:#b0bed9;margin-top:3px;letter-spacing:0}
+.nav{padding:4px;border-radius:16px;background:rgba(3,15,39,.88);border:1px solid rgba(50,126,225,.46);box-shadow:inset 0 0 18px rgba(15,86,202,.12)}
+.navbtn{min-width:148px;height:50px;border-radius:12px;padding:0 18px;font-size:12px;color:#91a5ce;display:flex;align-items:center;justify-content:center;gap:10px;font-weight:900}.navbtn .navico{font-size:21px;line-height:1;color:#9cb5dc}.navbtn.active{color:#fff;background:linear-gradient(135deg,#436ed9,#494fd7 56%,#6245d7);border:1px solid rgba(109,178,255,.85);box-shadow:inset 0 0 18px rgba(112,90,255,.30),0 0 10px rgba(66,144,255,.55),0 0 24px rgba(98,65,255,.42)}
+.navbtn.active .navico{color:#fff;text-shadow:0 0 8px rgba(255,255,255,.4)}
+.headright{gap:10px}.syncbadge{height:40px;padding:0 14px;border-radius:14px;background:rgba(2,14,34,.9);border-color:rgba(37,91,178,.35);color:#e1e8f6;font-size:10px}.syncdot{width:8px;height:8px;background:#00f0a7;box-shadow:0 0 5px #00f0a7,0 0 12px rgba(0,240,167,.9);animation:none}
+.profilemini{height:54px;padding:5px 14px 5px 6px;border-radius:15px;background:rgba(4,20,46,.90);border-color:rgba(66,140,238,.50);box-shadow:inset 0 0 18px rgba(38,116,255,.10)}.avatar{width:42px;height:42px;border-radius:12px;font-size:15px;background:linear-gradient(135deg,#69eaff,#8d80ff 58%,#d85cff);box-shadow:0 0 13px rgba(100,130,255,.35),inset 0 1px 0 rgba(255,255,255,.7)}.pname{font-size:11px;font-weight:900;max-width:180px}.prole{font-size:9px;color:#8da4c9;margin-top:3px}.logout{height:50px;border-radius:13px;padding:0 17px;font-size:11px;color:#eef5ff;border-color:rgba(77,107,191,.55);background:linear-gradient(180deg,rgba(17,26,61,.95),rgba(5,14,40,.95));box-shadow:inset 0 0 16px rgba(54,72,180,.13)}.logoutico{font-size:21px;vertical-align:-2px;margin-right:4px}
+
+/* page heading */
+.page{padding-top:24px}.herohead{margin:3px 0 17px;align-items:flex-end}.herohead h1{font-size:37px;line-height:1.03;letter-spacing:-1.7px;font-weight:900;text-shadow:0 3px 12px rgba(0,0,0,.3)}.herohead h1::first-line{color:#fff}.herohead p{font-size:14px;margin-top:6px;color:#c4d0e5}.datechip{height:42px;display:flex;align-items:center;padding:0 14px 0 38px;position:relative;border-radius:14px;background:rgba(7,18,49,.84);border:1px solid rgba(57,93,174,.48);color:#e0e8f8;font-size:10px}.datechip:before{content:"▣";position:absolute;left:13px;color:#5fcfff;font-size:17px}
+
+/* summary cards */
+.summary{gap:16px;margin-bottom:18px}.stat{min-height:116px;border-radius:18px;padding:16px 18px;display:flex;align-items:center;gap:23px;overflow:hidden;border-width:1.5px}.stat:before{display:none}.stat:after{right:-55px;bottom:-68px;width:190px;height:150px;background:repeating-radial-gradient(ellipse at center,rgba(74,138,255,.24) 0 1px,transparent 2px 12px);transform:rotate(-25deg);opacity:.58}.statcopy{position:relative;z-index:2}.staticon{width:74px;height:74px;flex:0 0 74px;border-radius:15px;display:grid;place-items:center;position:relative;z-index:2}.staticon svg{width:35px;height:35px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.statlabel{font-size:12px;letter-spacing:1.8px;color:#98acd0}.statvalue{font-size:37px;line-height:1;margin-top:8px;font-weight:950;letter-spacing:-1.5px}.statnote{font-size:11px;margin-top:8px;color:#c4cee0}.stat-status{border-color:#32edd5;box-shadow:inset 0 0 22px rgba(0,230,205,.18),0 0 10px rgba(34,237,211,.55),0 0 28px rgba(30,170,255,.22)}.stat-status .staticon{color:#42f2cf;background:linear-gradient(145deg,rgba(24,126,141,.42),rgba(5,62,80,.58));border:1px solid rgba(47,235,221,.58);box-shadow:inset 0 0 20px rgba(25,241,208,.14),0 0 12px rgba(25,241,208,.28)}
+.stat-quota{border-color:#497bff;box-shadow:inset 0 0 23px rgba(62,89,255,.17),0 0 10px rgba(69,111,255,.55),0 0 26px rgba(105,58,255,.22)}.stat-quota .staticon{color:#a6b7ff;background:linear-gradient(145deg,rgba(66,74,181,.48),rgba(20,29,95,.65));border:1px solid rgba(88,110,255,.70);box-shadow:0 0 15px rgba(73,91,255,.34)}
+.stat-out{border-color:#39dfff;box-shadow:inset 0 0 22px rgba(10,176,255,.15),0 0 10px rgba(44,207,255,.55),0 0 27px rgba(67,81,255,.20)}.stat-out .staticon{color:#8aeaff;background:linear-gradient(145deg,rgba(18,113,178,.45),rgba(12,42,98,.66));border:1px solid rgba(70,195,255,.62);box-shadow:0 0 14px rgba(39,160,255,.35)}
+.stat-late{border-color:#ff8d73;box-shadow:inset 0 0 25px rgba(255,74,139,.14),0 0 10px rgba(255,137,92,.46),0 0 30px rgba(255,58,171,.22)}.stat-late .staticon{color:#ffd07c;background:linear-gradient(145deg,rgba(130,68,71,.52),rgba(57,27,70,.70));border:1px solid rgba(255,134,104,.65);box-shadow:0 0 15px rgba(255,97,132,.30)}
+
+/* dashboard body */
+.dashgrid{grid-template-columns:minmax(0,2.18fr) minmax(410px,1fr);gap:16px}.maincard,.teamcard,.historycard{border-radius:22px;border-width:1.5px}.maincard{padding:20px 20px 18px;min-height:548px;border-color:#38dfff;box-shadow:inset 0 0 30px rgba(26,123,255,.09),0 0 9px rgba(24,206,255,.58),0 0 28px rgba(79,65,255,.21),0 18px 50px rgba(0,0,0,.38);background:linear-gradient(145deg,rgba(4,24,54,.96),rgba(2,13,36,.98) 68%,rgba(4,18,49,.96))}.maincard:before,.teamcard:before,.historycard:before{height:2px;left:18px;right:18px;background:linear-gradient(90deg,#35eaff,#2389ff 48%,#8f54ff 82%,#df4fff);opacity:.86;box-shadow:0 0 9px rgba(55,179,255,.45)}
+.cardtop{min-height:46px}.controlhead,.teamhead{display:flex;align-items:center;gap:13px}.controlIcon,.teamHeadIcon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;color:#b7d5ff;background:linear-gradient(145deg,rgba(49,113,255,.38),rgba(53,42,144,.54));border:1px solid rgba(61,126,255,.64);box-shadow:0 0 12px rgba(40,109,255,.42),inset 0 0 14px rgba(87,134,255,.12)}.controlIcon svg,.teamHeadIcon svg,.panelicon svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.kicker{font-size:13px;letter-spacing:.9px;color:#58edff;font-weight:900}.clock{font-size:11px;color:#d0daeb;margin-top:5px}.pill{padding:8px 15px;font-size:10px;border-width:1px;box-shadow:inset 0 0 13px rgba(255,255,255,.03)}.pill.in{color:#6affca;background:rgba(9,62,55,.58);border-color:rgba(49,241,180,.58);box-shadow:0 0 11px rgba(34,234,168,.26)}.pill.out{color:#ffdc93;background:rgba(82,57,12,.47);border-color:rgba(255,188,78,.55)}.pill.late{color:#ff9dbc;background:rgba(88,23,48,.52);border-color:rgba(255,83,132,.59)}
+.timerstage{grid-template-columns:410px minmax(0,1fr);gap:25px;padding:20px 0 7px;align-items:center}.ringbox{width:360px;height:360px}.ringbox:before{inset:6px;background:repeating-conic-gradient(from 0deg,rgba(63,203,255,.90) 0 1deg,transparent 1deg 5deg);mask:radial-gradient(circle,transparent 78%,#000 79% 80%,transparent 81%);filter:drop-shadow(0 0 5px rgba(0,198,255,.7));opacity:.82}.ringbox:after{inset:43px;background:radial-gradient(circle at 50% 40%,rgba(42,84,181,.36),rgba(4,19,50,.92) 55%,rgba(1,10,30,.99) 76%);border:1px solid rgba(67,160,255,.58);box-shadow:inset 0 0 55px rgba(51,72,255,.19),0 0 10px rgba(0,208,255,.55),0 0 36px rgba(77,63,255,.25)}
+.ring{filter:drop-shadow(0 0 5px #00dfff) drop-shadow(0 0 15px rgba(74,98,255,.78))}.ringbg{stroke:rgba(42,101,182,.48);stroke-width:11}.ringprogress{stroke-width:13;filter:drop-shadow(0 0 7px rgba(0,224,255,.9))}.ringprogress.late{filter:drop-shadow(0 0 7px rgba(255,77,192,.95))}.timecore{margin-top:1px}.timelabel{font-size:11px;letter-spacing:2.8px;color:#9aadd0;margin-bottom:18px}.unit{min-width:82px}.unit b{font-size:49px;letter-spacing:-2.5px;font-weight:900;text-shadow:0 0 12px rgba(255,255,255,.18),0 3px 8px rgba(0,0,0,.35)}.unit span{font-size:9px;color:#9caecc;margin-top:10px}.colon{font-size:27px;color:#7190bd;margin-top:-17px}.limittext{font-size:11px;color:#c3cee0;margin-top:18px}.limittext strong{color:#ff5aa0;font-weight:900}
+.ringbox .timecore:after{content:"";position:absolute;left:50%;top:250px;width:330px;height:34px;transform:translateX(-50%);border-radius:50%;border:2px solid rgba(21,148,255,.78);box-shadow:0 0 9px #00bfff,inset 0 0 15px rgba(41,102,255,.32);z-index:-1}
+.timeline{gap:16px}.timepanel{min-height:92px;padding:13px 17px;display:flex;align-items:center;gap:18px;border-radius:18px;border:1px solid rgba(48,131,255,.75);background:linear-gradient(135deg,rgba(7,31,70,.92),rgba(8,24,65,.93));box-shadow:inset 0 0 22px rgba(39,91,255,.11),0 0 7px rgba(16,154,255,.28);overflow:hidden}.timepanel:before{left:auto;right:0;top:0;bottom:0;width:3px;background:linear-gradient(#00e9ff,#795cff,#df4fff);opacity:.9}.timepanel:after{content:"";position:absolute;width:220px;height:90px;right:-70px;bottom:-56px;border-radius:50%;border:1px solid rgba(30,128,255,.62);box-shadow:0 -11px 0 -10px rgba(121,77,255,.46),0 -22px 0 -21px rgba(0,205,255,.25);transform:rotate(-15deg)}.panelicon{width:58px;height:58px;flex:0 0 58px;border-radius:13px;display:grid;place-items:center;color:#bdc7ff;background:linear-gradient(145deg,rgba(67,90,221,.53),rgba(34,26,111,.66));border:1px solid rgba(77,100,255,.72);box-shadow:0 0 13px rgba(59,75,255,.35),inset 0 0 16px rgba(107,113,255,.15);position:relative;z-index:2}.timecopy{position:relative;z-index:2}.timecopy>span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#a9bddf;font-weight:900}.timecopy>b{display:block;margin-top:6px;font-size:22px;color:#fff;font-weight:900;font-variant-numeric:tabular-nums}.progressinfo{min-height:80px;padding:10px 15px;display:flex;align-items:center;gap:18px;border-radius:18px;background:linear-gradient(135deg,rgba(7,26,62,.94),rgba(10,23,65,.94));border:1px solid rgba(71,110,228,.64);box-shadow:inset 0 0 19px rgba(57,75,211,.10)}.progressicon{width:52px;height:52px;flex-basis:52px;color:#9ecbff}.progresscopy{flex:1;min-width:0}.progressrow{font-size:11px;color:#e0e8f7}.track{height:11px;background:rgba(43,58,112,.66);margin-top:12px;box-shadow:inset 0 2px 5px rgba(0,0,0,.38)}.track i{background:linear-gradient(90deg,#31eaff 0%,#27c3ff 38%,#7072ff 68%,#b65cff 100%);box-shadow:0 0 11px rgba(49,199,255,.65)}
+.actionbtn{height:82px;border-radius:16px;margin-top:2px;font-size:25px;font-weight:950;letter-spacing:.4px;color:#090a18;background:linear-gradient(105deg,#ffbe47 0%,#ff755e 30%,#ff4c9a 64%,#ee41ff 100%);box-shadow:0 0 9px rgba(255,171,70,.76),0 0 24px rgba(255,61,191,.48),inset 0 1px 0 rgba(255,255,255,.50);padding:0 70px}.actionbtn:before{content:"⇥";position:absolute;left:31px;top:50%;transform:translateY(-52%);font-size:36px;border:0;inset:auto auto auto 31px;color:#101126}.actionbtn:after{content:"❯❯";position:absolute;right:30px;top:50%;transform:translateY(-52%);font-size:27px;letter-spacing:-7px;color:#fff;text-shadow:0 0 7px rgba(255,255,255,.5)}.actionbtn.end{background:linear-gradient(105deg,#2fd3ff,#506aff 42%,#8d50ff 78%,#d94bff);box-shadow:0 0 10px rgba(47,203,255,.62),0 0 24px rgba(103,76,255,.40);color:#fff}.actionhelp{font-size:10px;color:#8195b6;margin-top:-2px}
+
+/* staff live */
+.teamcard{min-height:548px;padding:18px;border-color:#5de7ff;box-shadow:inset 0 0 25px rgba(13,111,255,.09),0 0 9px rgba(67,208,255,.48),0 0 26px rgba(196,57,255,.25),0 18px 50px rgba(0,0,0,.38);background:linear-gradient(145deg,rgba(5,25,54,.96),rgba(2,14,36,.98) 62%,rgba(17,11,54,.94))}.teamHeadIcon{color:#c2dcff;background:linear-gradient(145deg,rgba(45,112,226,.45),rgba(38,34,134,.64));border-color:rgba(68,145,255,.65)}.cardtitle{font-size:20px;font-weight:900;letter-spacing:-.35px}.cardmeta{font-size:10px;color:#9db0cf;margin-top:5px}.teamlist{gap:9px;margin-top:15px}.teamrow{min-height:64px;padding:8px 12px;border-radius:14px;background:linear-gradient(120deg,rgba(5,24,52,.94),rgba(3,17,41,.96));border:1px solid rgba(40,113,211,.58);box-shadow:inset 0 0 13px rgba(36,81,178,.07);position:relative;overflow:hidden}.teamrow:after{content:"";position:absolute;right:-55px;bottom:-52px;width:190px;height:85px;border-radius:50%;border:1px solid rgba(26,128,255,.5);box-shadow:0 -11px 0 -10px rgba(43,105,255,.30),0 -22px 0 -21px rgba(0,209,255,.18);transform:rotate(-11deg)}.teamrow:hover{transform:none;border-color:rgba(54,166,255,.78);background:linear-gradient(120deg,rgba(6,32,66,.96),rgba(4,19,47,.97))}.teamleft,.teamright{position:relative;z-index:2}.teamav{width:45px;height:45px;border-radius:11px;background:linear-gradient(145deg,rgba(34,112,186,.55),rgba(27,35,95,.76));border:1px solid rgba(77,149,255,.58);font-size:12px;color:#e6f5ff;box-shadow:inset 0 0 12px rgba(76,143,255,.13)}.teamname{font-size:12px;font-weight:900;max-width:210px;color:#f4f8ff}.teamrole{font-size:9px;color:#93a9ca;margin-top:4px}.mini{font-size:8px;padding:6px 10px}.mini.in{color:#69ffca;background:rgba(6,54,49,.72);border-color:rgba(37,225,166,.55);box-shadow:0 0 8px rgba(31,223,161,.24)}.mini.out{color:#ffd27a;background:rgba(73,49,9,.68);border-color:rgba(241,168,52,.58)}.mini.late{color:#ff9dbd;background:rgba(75,20,46,.7);border-color:rgba(244,73,127,.6)}.teamtime{font-size:8px;color:#93a6c5}
+
+/* history page receives the same visual language */
+.historysummary{gap:16px}.hstat{border-color:rgba(60,156,255,.58);box-shadow:0 0 7px rgba(31,145,255,.24),inset 0 0 18px rgba(45,90,255,.08);min-height:90px}.hstat span{font-size:10px;color:#98abd0}.hstat b{font-size:31px}.historycard{border-color:rgba(57,211,255,.65);box-shadow:0 0 10px rgba(46,174,255,.32),0 0 28px rgba(91,64,255,.18),0 20px 55px rgba(0,0,0,.37)}.historytoolbar{margin-bottom:16px}.filterinput,.filterselect{height:44px;border-radius:12px;border-color:rgba(58,118,221,.52);background:#05142e;font-size:10px}.tablewrap{border-color:rgba(44,135,231,.46);background:#041126}.tablewrap table{min-width:1100px}th{background:#081b3b;color:#8fb4e7;font-size:10px;padding:15px 16px}td{font-size:11px;font-weight:750;color:#dce7f8;padding:16px;border-color:rgba(57,103,176,.22)}.staffcell b{font-size:12px}.staffcell span{font-size:9px}.historydate,.historytime{font-size:11px}.duration{font-size:12px}.historyav{width:36px;height:36px;border-color:rgba(66,145,255,.54);background:linear-gradient(145deg,rgba(40,111,190,.48),rgba(26,30,87,.72))}
+.footer{color:#7b90b2;font-size:9px}
+
+/* login restyle */
+.loginwrap{min-height:calc(100vh - 110px)}.loginbox{width:min(540px,100%);padding:34px;border-radius:24px;border:1px solid rgba(56,208,255,.68);background:linear-gradient(145deg,rgba(6,27,60,.97),rgba(3,14,37,.98) 66%,rgba(19,11,57,.95));box-shadow:0 0 10px rgba(44,187,255,.44),0 0 34px rgba(93,59,255,.28),0 24px 70px rgba(0,0,0,.48)}.loginbrand{background:rgba(4,18,45,.73);border-color:rgba(63,126,226,.50);padding:13px 15px}.loginbrand img{width:210px;height:52px}.eyebrow{color:#5eeeff;font-size:10px}.loginbox h1{font-size:38px}.loginbox p{font-size:13px;color:#a7b7d2}.authswitch{background:#04142e;border-color:rgba(57,116,215,.50)}.authswitch button{height:44px;font-size:10px}.authswitch button.active{background:linear-gradient(135deg,rgba(54,108,239,.62),rgba(101,64,223,.55));box-shadow:0 0 9px rgba(67,126,255,.38),inset 0 0 14px rgba(114,92,255,.18)}.input{height:55px;background:#04142e;border-color:rgba(57,116,215,.45);font-size:13px}.input:focus{border-color:#41e6ff;box-shadow:0 0 0 3px rgba(43,220,255,.08),0 0 12px rgba(48,178,255,.20)}.loginbtn{height:58px;font-size:14px;background:linear-gradient(105deg,#29e3ff,#3a8bff 42%,#715cff 72%,#bb4dff);color:white;box-shadow:0 0 10px rgba(36,199,255,.45),0 0 25px rgba(96,68,255,.28)}
+
+@media(max-width:1240px){.dashgrid{grid-template-columns:1fr}.teamcard{min-height:auto}.summary{grid-template-columns:repeat(2,1fr)}.timerstage{grid-template-columns:380px 1fr}.header{flex-wrap:wrap;gap:10px;height:auto;padding-top:10px;padding-bottom:10px}.nav{order:3;width:100%}.navbtn{flex:1}.brand{flex:1 1 auto}.headright{margin-left:auto}}
+@media(max-width:780px){body:before,body:after,.gridfx:before,.gridfx:after{opacity:.35}.shell{width:min(100% - 16px,1478px);padding-top:8px}.header{top:5px;padding:9px 10px}.logo{width:155px;height:44px;flex-basis:155px}.brandcopy{padding-left:10px}.brandname{font-size:12px}.brandsub{font-size:8px}.navbtn{height:44px;min-width:0;font-size:10px}.navbtn .navico{font-size:16px}.profilemini{height:46px}.avatar{width:35px;height:35px}.logout{height:44px;padding:0 10px}.herohead h1{font-size:27px}.herohead p{font-size:11px}.summary{gap:10px}.stat{min-height:100px;padding:12px;gap:14px}.staticon{width:54px;height:54px;flex-basis:54px}.staticon svg{width:27px;height:27px}.statlabel{font-size:9px}.statvalue{font-size:29px}.statnote{font-size:9px}.timerstage{grid-template-columns:1fr}.ringbox{width:318px;height:318px}.timeline{display:flex}.timepanel{min-height:80px}.teamcard{padding:14px}.cardtitle{font-size:17px}.datechip{display:none}}
+@media(max-width:480px){.headright .syncbadge{display:none}.brand{gap:8px}.logo{width:132px;height:40px;flex-basis:132px}.brandcopy{display:none}.summary{grid-template-columns:1fr 1fr}.stat{gap:10px}.staticon{width:46px;height:46px;flex-basis:46px}.statvalue{font-size:24px}.statnote{display:none}.maincard{padding:14px}.ringbox{width:278px;height:278px}.unit{min-width:60px}.unit b{font-size:37px}.ringbox .timecore:after{top:205px;width:255px}.panelicon{width:48px;height:48px;flex-basis:48px}.timecopy>b{font-size:18px}.actionbtn{height:68px;font-size:19px;padding:0 55px}.actionbtn:before{left:20px;font-size:28px}.actionbtn:after{right:18px}.teamname{max-width:150px}}
+
 </style>
 </head>
 <body>
@@ -91,13 +166,13 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
       <div class="brandcopy"><div class="brandname">IZIN KELUAR CITAWIN</div><div class="brandsub">Premium Staff Permission Center</div></div>
     </div>
     <nav id="mainNav" class="nav hidden">
-      <button class="navbtn active" data-tab="dashboard">DASHBOARD</button>
-      <button class="navbtn" data-tab="history">RIWAYAT IZIN</button>
+      <button class="navbtn active" data-tab="dashboard"><span class="navico">⌂</span>DASHBOARD</button>
+      <button class="navbtn" data-tab="history"><span class="navico">▤</span>RIWAYAT IZIN</button>
     </nav>
     <div id="headerUser" class="headright hidden">
       <div class="syncbadge"><i class="syncdot"></i><span>Fast Sync</span></div>
       <div class="profilemini"><div id="avatar" class="avatar">N</div><div><div id="meName" class="pname">-</div><div id="meRole" class="prole">-</div></div></div>
-      <button id="logoutBtn" class="logout">LOGOUT</button>
+      <button id="logoutBtn" class="logout"><span class="logoutico">⇥</span> LOGOUT</button>
     </div>
   </header>
 
@@ -141,16 +216,16 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
       <div class="herohead"><div><h1>Dashboard Izin Staff</h1><p>Kontrol izin real-time dengan tampilan premium, cepat, dan ringan.</p></div><div id="todayLabel" class="datechip">-</div></div>
 
       <div class="summary">
-        <div class="stat glass"><div class="statlabel">Status Saya</div><div id="sumMyStatus" class="statvalue">MASUK</div><div id="sumMyStatusNote" class="statnote">Siap bekerja</div></div>
-        <div class="stat glass"><div class="statlabel">Izin Hari Ini</div><div id="sumQuota" class="statvalue">0 / 4</div><div id="sumQuotaNote" class="statnote">Reset otomatis 00:00 GMT+7</div></div>
-        <div class="stat glass"><div class="statlabel">Sedang Izin</div><div id="sumOut" class="statvalue">0</div><div class="statnote">Status staff live</div></div>
-        <div class="stat glass"><div class="statlabel">Terlambat</div><div id="sumLate" class="statvalue">0</div><div class="statnote">Melewati 16 menit</div></div>
+        <div class="stat glass stat-status"><div class="staticon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="statcopy"><div class="statlabel">Status Saya</div><div id="sumMyStatus" class="statvalue">MASUK</div><div id="sumMyStatusNote" class="statnote">Siap bekerja</div></div></div>
+        <div class="stat glass stat-quota"><div class="staticon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg></div><div class="statcopy"><div class="statlabel">Izin Hari Ini</div><div id="sumQuota" class="statvalue">0 / 4</div><div id="sumQuotaNote" class="statnote">Reset otomatis 00:00 GMT+7</div></div></div>
+        <div class="stat glass stat-out"><div class="staticon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="statcopy"><div class="statlabel">Sedang Izin</div><div id="sumOut" class="statvalue">0</div><div class="statnote">Status staff live</div></div></div>
+        <div class="stat glass stat-late"><div class="staticon"><svg viewBox="0 0 24 24"><path d="M6 2h12M6 22h12M8 2c0 5 2 6 4 8-2 2-4 3-4 8M16 2c0 5-2 6-4 8 2 2 4 3 4 8"/></svg></div><div class="statcopy"><div class="statlabel">Terlambat</div><div id="sumLate" class="statvalue">0</div><div class="statnote">Melewati 16 menit</div></div></div>
       </div>
 
       <div class="dashgrid">
         <section class="maincard glass">
           <div class="cardtop">
-            <div><div class="kicker">Permission Control Center</div><div id="liveClock" class="clock">--/--/---- --:--:--</div></div>
+            <div class="controlhead"><span class="controlIcon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06a1.7 1.7 0 0 0-1.88-.34 1.7 1.7 0 0 0-1.03 1.56V21h-4v-.07A1.7 1.7 0 0 0 9 19.37a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.63 15 1.7 1.7 0 0 0 3.07 14H3v-4h.07A1.7 1.7 0 0 0 4.63 9 1.7 1.7 0 0 0 4.29 7.1l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 9 4.63 1.7 1.7 0 0 0 10 3.07V3h4v.07A1.7 1.7 0 0 0 15 4.63a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.37 9 1.7 1.7 0 0 0 20.93 10H21v4h-.07A1.7 1.7 0 0 0 19.4 15z"/></svg></span><div><div class="kicker">Permission Control Center</div><div id="liveClock" class="clock">--/--/---- --:--:--</div></div></div>
             <span id="myStatus" class="pill in">MASUK</span>
           </div>
 
@@ -158,8 +233,8 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
             <div class="ringbox">
               <svg class="ring" viewBox="0 0 220 220" aria-hidden="true">
                 <defs>
-                  <linearGradient id="timerGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#42e8ff"/><stop offset="1" stop-color="#9c6cff"/></linearGradient>
-                  <linearGradient id="lateGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffbd55"/><stop offset="1" stop-color="#ff5c78"/></linearGradient>
+                  <linearGradient id="timerGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00ecff"/><stop offset=".35" stop-color="#178bff"/><stop offset=".68" stop-color="#8e54ff"/><stop offset="1" stop-color="#ff53c8"/></linearGradient>
+                  <linearGradient id="lateGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00e9ff"/><stop offset=".34" stop-color="#6b62ff"/><stop offset=".66" stop-color="#ff4cc3"/><stop offset="1" stop-color="#ffb63e"/></linearGradient>
                 </defs>
                 <circle class="ringbg" cx="110" cy="110" r="90"></circle>
                 <circle id="ringProgress" class="ringprogress" cx="110" cy="110" r="90"></circle>
@@ -176,12 +251,9 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
             </div>
 
             <div class="timeline">
-              <div class="timepanel"><span>Start Izin</span><b id="startTime">-</b></div>
-              <div class="timepanel"><span>End Time Masuk</span><b id="endTime">-</b></div>
-              <div class="progressinfo">
-                <div class="progressrow"><span id="limitLabel">Kuota hari ini 0 / 4</span><span id="remainingLabel">Sisa 4 kali</span></div>
-                <div class="track"><i id="quotaBar"></i></div>
-              </div>
+              <div class="timepanel"><span class="panelicon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div class="timecopy"><span>Start Izin</span><b id="startTime">-</b></div></div>
+              <div class="timepanel"><span class="panelicon"><svg viewBox="0 0 24 24"><path d="M9 2h6M12 2v3M7 8a7 7 0 1 0 10 0M12 11v4M9 7h6"/></svg></span><div class="timecopy"><span>End Time Masuk</span><b id="endTime">-</b></div></div>
+              <div class="progressinfo"><span class="panelicon progressicon"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20V7"/></svg></span><div class="progresscopy"><div class="progressrow"><span id="limitLabel">Kuota hari ini 0 / 4</span><span id="remainingLabel">Sisa 4 kali</span></div><div class="track"><i id="quotaBar"></i></div></div></div>
               <button id="actionBtn" class="btn actionbtn">IZIN KELUAR</button>
               <div id="actionHelp" class="actionhelp">Timer tersimpan di server dan tidak berhenti saat browser direfresh.</div>
             </div>
@@ -189,7 +261,7 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
         </section>
 
         <aside class="teamcard glass">
-          <div class="cardtop"><div><div class="cardtitle">Status Staff Live</div><div class="cardmeta">Fast sync • timer lokal • request server minimal</div></div><span class="pill in"><i class="syncdot" style="display:inline-block;margin-right:6px"></i>LIVE</span></div>
+          <div class="cardtop"><div class="teamhead"><span class="teamHeadIcon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></span><div><div class="cardtitle">Status Staff Live</div><div class="cardmeta">Fast sync • timer lokal • request server minimal</div></div></div><span class="pill in"><i class="syncdot" style="display:inline-block;margin-right:6px"></i>LIVE</span></div>
           <div id="staffList" class="teamlist"></div>
         </aside>
       </div>
@@ -226,7 +298,7 @@ button,input,select{font:inherit}.hidden{display:none!important}.shell{width:min
   // WAJIB GANTI DENGAN URL WEB APP APPS SCRIPT ANDA YANG BERAKHIR /exec
   // contoh: https://script.google.com/macros/s/AKfycbxxxxxxxxxxxx/exec
   // ================================================================
-  const GAS_URL = 'https://script.google.com/macros/s/AKfycbygq0_znpAsWbdiRugATmIOfXENrDYv0lCLpyboFycKCdhJva0GfAByqquFDJdIQVGn/exec';
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbzs93nAtzEVfgnIeeKkYrZGl3CoJAzeNScUGINbIo7Itvx4GxLrGkZI-MJaiIKDeKU/exec';
 
   const state = {
     token: localStorage.getItem('citawin_izin_token') || '',
